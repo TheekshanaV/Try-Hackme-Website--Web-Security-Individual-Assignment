@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login - IT22083678</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .info-box {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        .login-form {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+        }
+        .login-form label {
+            align-self: flex-start;
+            margin-bottom: 5px;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .login-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #555;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+       
+        .banner-message {
+            display: none;
+            background-color: orange;
+            color: black;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Services</a></li>
+                <li><a href="index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <div class="banner-message" id="bannerMessage">
+        Congratulations! You solved the lab.<br>
+        Capture the Flag: T8467S2024
+    </div>
+
+   
+    <div class="container">
+        <div class="info-box">
+            <h2>How to Solve the Lab</h2><br>
+            <p>Simulate SQL Injection on the Login Form.<br>
+                Here is an example of SQL Injection that could be used to login:<br><br>
+                Username: admin<br>
+                Password: <span id="clickMe" style="color: blue; cursor: pointer; text-decoration: underline;">Click Me</span><br>
+            </p>
+        </div>
+
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>&copy;Design By Theekshana Sahan  ||  IT22083678 SAHAN H P T  ||  All rights reserved</p>
+    </footer>
+
+    <script>
+        
+        document.getElementById('clickMe').addEventListener('click', function() {
+            alert('Password: WS');
+        });
+
+ 
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+          
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+      
+            if (username === 'admin' && password === 'WS') {
+                showBannerMessage();
+            } else {
+                alert('Incorrect Username or Password');
+            }
+        });
+
+       
+        function showBannerMessage() {
+            const banner = document.getElementById('bannerMessage');
+            banner.style.display = 'block';
+
+            
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 9000);
+        }
+    </script>
+</body>
+</html>

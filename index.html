@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IT23228344</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .vulnerabilities-info {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .vulnerabilities-info p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 10px auto;
+            max-width: 600px;
+            color: #333;
+        }
+        .access-button {
+            background-color: orange;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .access-button:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Services</a></li>
+                <li><a href="index.html">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Exploring OWAZAP TOP 10 WEB SECURITY -IE2062</h1>
+        <p>Our goal is to create awareness about the vital role of cybersecurity in today’s web-based<br>
+             applications and to demonstrate effective strategies to mitigate security threats.</p>
+    </section>
+
+    <section class="vulnerabilities-container">
+        <div class="vulnerabilities-info">
+            <h1>SQL Injection Lab</h1>
+            <p>SQL Injection is a web security vulnerability that allows attackers to interfere with the queries made to a database. It can lead to unauthorized access or modification of sensitive data.</p>
+            <button class="access-button" onclick="accessLab()">Access the Lab</button>
+        </div>
+        
+        <div class="vulnerabilities">
+            <!-- Vulnerability Boxes (1-10) -->
+            <div class="vulnerability-box" data-message="Answer: Injection">
+                <h3>1. Injection</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: Authentication">
+                <h3>2. Broken Authentication</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: Exposure">
+                <h3>3. Sensitive Data Exposure</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: XXE">
+                <h3>4. XML External Entities (XXE)</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: Access">
+                <h3>5. Broken Access Control</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: Misconfiguration">
+                <h3>6. Security Misconfiguration</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: XSS">
+                <h3>7. Cross-Site Scripting (XSS)</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: Deserialization">
+                <h3>8. Insecure Deserialization</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: Components">
+                <h3>9. Known Vulnerabilities</h3>
+            </div>
+            <div class="vulnerability-box" data-message="Answer: Logging">
+                <h3>10. Insufficient Logging & Monitoring</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy;Design By Vikum Theekshana Dahanayake   ||  IT23228344 Dahanayake V.T  ||  All rights reserved</p>
+    </footer>
+
+    <script>
+ 
+        function accessLab() {
+            window.location.href = "login.html";
+        }
+
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            const boxes = document.querySelectorAll('.vulnerability-box');
+            boxes.forEach(box => {
+                box.addEventListener('click', function() {
+                    alert(this.getAttribute('data-message'));
+                });
+            });
+
+            
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); 
+                    alert('Login Successful! Redirecting to Home Page...');
+                    window.location.href = "index.html"; 
+                });
+            }
+        });
+    </script>
+</body>
+</html>
